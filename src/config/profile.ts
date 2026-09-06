@@ -124,15 +124,15 @@ export const profileConfig: ProfileConfig = {
   skills: [
     {
       category: 'Languages & Core',
-      items: ['TypeScript', 'Rust', 'Go', 'Python', 'SQL', 'HTML / CSS'],
+      items: ['Javascript', 'HTML', 'CSS', 'Typescript', 'SQL'],
     },
     {
       category: 'Frameworks & Systems',
-      items: ['React / Next.js', 'Node.js', 'Tailwind CSS', 'Docker', 'PostgreSQL', 'Redis'],
+      items: ['React / Next.js', 'Node.js', 'Tailwind CSS', 'PostgreSQL'],
     },
     {
       category: 'Tools & Workflow',
-      items: ['Git', 'Linux / Bash', 'Neovim', 'Vite', 'Figma'],
+      items: ['Git', 'Bash'],
     },
   ],
 
@@ -140,24 +140,17 @@ export const profileConfig: ProfileConfig = {
   // 8. Interests (Minimalist inline tags)
   // ---------------------------------------------------------------------
   interests: [
-    'Distributed Systems',
-    'Game Engine Tech',
-    'Open Source',
-    'Compilers',
-    'Pixel Art',
-    'Mechanical Keyboards',
-    'Sci-Fi Cinema',
-    'Coffee Brewing',
+    'coding',
+    'vibecoding',
+    'playing games',
+    'building fun things',
+    'solving math problems',
   ],
 
   // ---------------------------------------------------------------------
-  // 9. Favorites (Optional categories. Add, modify or remove freely!)
+  // 9. Favorites (Optional categories. Disabled by default)
   // ---------------------------------------------------------------------
-  favorites: {
-    'Daily Tools': ['Ghostty terminal', 'Zed editor', 'Raycast', 'Linear'],
-    'Soundtrack & Music': ['Synthwave', 'Ambient Techno', 'Porter Robinson', 'Lorn'],
-    'Influential Books': ['Designing Data-Intensive Applications', 'The Pragmatic Programmer'],
-  },
+  favorites: {},
 
   // ---------------------------------------------------------------------
   // 10. External Profiles & Links
@@ -170,40 +163,22 @@ export const profileConfig: ProfileConfig = {
       description: 'Open-source projects & code',
     },
     {
-      label: 'Steam',
-      url: 'https://steamcommunity.com',
-      icon: 'steam',
-      description: 'Game library & activity',
-    },
-    {
-      label: 'Twitch',
-      url: 'https://twitch.tv',
-      icon: 'twitch',
-      description: 'Casual streams & gameplay',
-    },
-    {
-      label: 'Spotify',
-      url: 'https://spotify.com',
-      icon: 'spotify',
-      description: 'Coding playlists & favorites',
-    },
-    {
       label: 'YouTube',
       url: 'https://youtube.com',
       icon: 'youtube',
       description: 'Tech clips & highlights',
     },
     {
-      label: 'X / Twitter',
-      url: 'https://x.com',
-      icon: 'x',
-      description: 'Tech thoughts & dev logs',
-    },
-    {
       label: 'Email',
       url: 'mailto:contact@example.com',
       icon: 'mail',
       description: 'Direct contact',
+    },
+    {
+      label: 'Spotify',
+      url: 'https://spotify.com',
+      icon: 'spotify',
+      description: 'Coding playlists & favorites',
     },
   ],
 
@@ -217,7 +192,7 @@ export const profileConfig: ProfileConfig = {
     games: { enabled: true, title: 'Games' },
     skills: { enabled: true, title: 'Skills & Domains' },
     interests: { enabled: true, title: 'Interests' },
-    favorites: { enabled: true, title: 'Favorites' },
+    favorites: { enabled: false, title: 'Favorites' }, // Disabled
     links: { enabled: true, title: 'Find Me Online' },
   },
 

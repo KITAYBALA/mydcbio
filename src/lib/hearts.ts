@@ -45,26 +45,22 @@ export function useHearts() {
 
     setIsUpdating(true);
 
-    setHasLiked((prevLiked) => {
-      const nextLiked = !prevLiked;
-      setCount((prevCount) => (nextLiked ? prevCount + 1 : Math.max(0, prevCount - 1)));
+    const nextLiked = !hasLiked;
+    setHasLiked(nextLiked);
+    setCount(nextLiked ? count + 1 : Math.max(0, count - 1));
 
-      // Optional Backend sync hook (e.g. Supabase or serverless function)
-      // If a backend URL is configured in import.meta.env.VITE_HEARTS_API_URL:
-      const apiUrl = (import.meta as { env?: { VITE_HEARTS_API_URL?: string } }).env
-        ?.VITE_HEARTS_API_URL;
-      if (apiUrl) {
-        fetch(apiUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ action: nextLiked ? 'like' : 'unlike' }),
-        }).catch((err) => {
-          console.warn('Backend heart sync failed, keeping optimistic local state:', err);
-        });
-      }
-
-      return nextLiked;
-    });
+    // Optional Backend sync hook (e.g. Supabase or serverless function)
+    const apiUrl = (import.meta as { env?: { VITE_HEARTS_API_URL?: string } }).env
+      ?.VITE_HEARTS_API_URL;
+    if (apiUrl) {
+      fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: nextLiked ? 'like' : 'unlike' }),
+      }).catch((err) => {
+        console.warn('Backend heart sync failed, keeping optimistic local state:', err);
+      });
+    }
 
     if (debounceTimerRef.current) {
       clearTimeout(debounceTimerRef.current);
@@ -72,7 +68,7 @@ export function useHearts() {
     debounceTimerRef.current = setTimeout(() => {
       setIsUpdating(false);
     }, 350);
-  }, [isUpdating]);
+  }, [hasLiked, count, isUpdating]);
 
   return {
     hasLiked,

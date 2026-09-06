@@ -9,7 +9,6 @@ import { ProjectsSection } from './components/ProjectsSection';
 import { GamesSection } from './components/GamesSection';
 import { SkillsSection } from './components/SkillsSection';
 import { InterestsSection } from './components/InterestsSection';
-import { FavoritesSection } from './components/FavoritesSection';
 import { SocialLinks } from './components/SocialLinks';
 import { Footer } from './components/Footer';
 import { BackgroundCanvas } from './components/BackgroundCanvas';
@@ -108,13 +107,6 @@ export const App: React.FC = () => {
             <InterestsSection
               interests={profile.interests}
               title={sections.interests.title}
-            />
-          )}
-
-          {sections.favorites?.enabled && (
-            <FavoritesSection
-              favorites={profile.favorites}
-              title={sections.favorites.title}
             />
           )}
 
