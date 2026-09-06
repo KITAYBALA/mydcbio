@@ -17,7 +17,7 @@ export const profileConfig: ProfileConfig = {
   pronouns: 'he/him',
   avatar: `${import.meta.env.BASE_URL}avatar.jpg`, // Custom uploaded Tom & Jerry ninja cat avatar
   bannerColor: '#161922',
-  banner: 'https://cdn.vectorstock.com/i/500p/54/22/cartoon-nature-landscape-night-time-background-vector-43765422.jpg',
+  banner: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80',
   tagline: 'website developer, game developer & a good vibecoder :)',
   status: 'building a really fun website!',
 
